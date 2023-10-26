@@ -9,7 +9,8 @@ const Settings = () =>{
        setShow(show)
     }
     return(
-        <Container>
+   
+            <Container>
             <Wrapper>
                 <Head>
                 <h4>Settings</h4>
@@ -130,6 +131,7 @@ const Settings = () =>{
                 </General>
             </Wrapper>
         </Container>
+ 
     )
 }
 
@@ -183,6 +185,8 @@ gap: 50px;
 `
 const Container = styled.div`
 width: 400px;
+/* background-color: red; */
+height: calc(100vh - 60px);
 box-shadow: rgba(99, 99, 99, 0.2) 0px 20px 8px 0px;
 z-index: 8;
 overflow-x: auto;
@@ -191,6 +195,5 @@ justify-content: center;
 align-items: center;
 position: absolute; 
 right: 0;
-top: 0;
 bottom: 0;
 `

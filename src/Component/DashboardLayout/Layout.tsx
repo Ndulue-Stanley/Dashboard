@@ -11,7 +11,7 @@ const Layout = () =>{
             <DashboardHead/>
             <Holder>
             <Sidebar/>
-            <Settings/>
+            {/* <Settings/> */}
             <Outlet/>
             </Holder>
         </div>
@@ -24,5 +24,5 @@ const Holder = styled.div`
     display: flex;
     height: calc(100vh - 60px);
     position: relative;
-    
+    width: 100%;
 `

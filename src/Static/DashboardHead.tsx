@@ -6,16 +6,24 @@ import {VscMegaphone} from 'react-icons/vsc'
 import {CiSettings} from 'react-icons/ci'
 import { useState } from "react";
 import Settings from "../Pages/SettingsDrop";
+import MicMenu from "../Pages/MicMenu";
 
 const DashboardHead = () =>{
 
     const [show, setShow] = useState<Boolean>(false)
     const Toggle = () =>{
        setShow(!show)
+       setShow2(false)
+    }
+    const [show2, setShow2] = useState<Boolean>(false)
+    const Toggle2 = () =>{
+       setShow2(!show2)
+       setShow(false)
     }
 
     return(
-        <Container>
+        <div>
+                 <Container>
             <Wrapper>
                 <Holder>
                 <Menu>
@@ -30,22 +38,59 @@ const DashboardHead = () =>{
                 </SearchHold>
                 </InputHold>
                 <IconHold>
-                    <One>
-                        <CiSettings onClick={Toggle}/>
+                    <One onClick={Toggle}>
+                        <CiSettings />
                         </One>
                     <Two><AiOutlineQuestion/></Two>
-                    <Three><VscMegaphone/></Three>
+                    <Three><VscMegaphone onClick={Toggle2}/></Three>
                     <Circle>
                       NS
                     </Circle>
                     </IconHold>
             </Wrapper>
         </Container>
+        {show ? <Holder1>
+            <Settings/>
+        </Holder1> : null}
+        {show2 ?    <Holder2>
+            <MicMenu/> 
+        </Holder2> : null}
+
+        </div>
+       
         
     )
 }
 
 export default DashboardHead;
+
+
+const Holder1 = styled.div`
+    width: 400px;
+    height: calc(100vh - 60px);
+box-shadow: rgba(99, 99, 99, 0.2) 0px 20px 8px 0px;
+z-index: 8;
+overflow-x: auto;
+display: flex;
+justify-content: center;
+align-items: center;
+position: absolute; 
+right: 0;
+bottom: 0;
+`
+const Holder2 = styled.div`
+    width: 400px;
+    height: calc(100vh - 60px);
+box-shadow: rgba(99, 99, 99, 0.2) 0px 20px 8px 0px;
+z-index: 8;
+overflow-x: auto;
+display: flex;
+justify-content: center;
+align-items: center;
+position: absolute; 
+right: 0;
+bottom: 0;
+`
 
 const Circle = styled.div`
 width: 30px;
